@@ -19,5 +19,49 @@
                 }
             ]
         }
+    ],
+    "chimie":
+    [
+        {
+            "index": 2,
+            "question": "ce caut eu aici",
+            "answers": [
+                {
+                    "answer" : "da dc nu"
+                },
+                {
+                    "answer" : "da dc nu"
+                },
+                {
+                    "answer" : "da dc nu corect",
+                    "isCorect": true
+                },
+                {
+                    "answer" : "da dc nu"
+                }
+            ]
+        }
+    ],
+    "fizica" : [
+        {
+            "index": 3,
+            "question": "ce caut eu aici",
+            "answers": [
+                {
+                    "answer" : "da dc nu"
+                },
+                {
+                    "answer" : "da dc nu"
+                },
+                {
+                    "answer" : "da dc nu corect",
+                    "isCorect": true
+                },
+                {
+                    "answer" : "da dc nu"
+                }
+            ]
+        }
     ]
+
 }

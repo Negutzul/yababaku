@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'screens/class_selection_screen.dart';
 import 'screens/class_home_screen.dart';
 
 void main() {
@@ -27,15 +26,8 @@ class EntryPoint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClassSelectionScreen(
-      onClassSelected: (selectedClass) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ClassHomeScreen(),
-          ),
-        );
-      },
+    return ClassHomeScreen(
+      
     );
   }
 }

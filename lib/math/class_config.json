@@ -1,0 +1,9 @@
+{
+  "buttons": [
+    { "label": "Start Lesson" },
+    { "label": "Quick Quiz" },
+    { "label": "Daily Challenge" },
+    { "label": "Review Topics" },
+    { "label": "Leaderboard" }
+  ]
+}

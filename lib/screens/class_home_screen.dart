@@ -20,7 +20,7 @@ class _ClassHomeScreenState extends State<ClassHomeScreen> {
 
   Future<void> loadConfig() async {
     try {
-      final jsonString = await rootBundle.loadString('lib/math/class_config.json');
+      final jsonString = await rootBundle.loadString('lib/medicine/class_config.json');
       final Map<String, dynamic> map = json.decode(jsonString);
       setState(() {
         buttonLabels = List<String>.from(map['buttons'].map((b) => b['label']));

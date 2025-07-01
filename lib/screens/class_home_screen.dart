@@ -19,20 +19,21 @@ class _ClassHomeScreenState extends State<ClassHomeScreen> {
   }
 
   Future<void> loadConfig() async {
-    final String jsonString =
-        await rootBundle.loadString('lib/math/class_config.json');
-    final Map<String, dynamic> jsonMap = json.decode(jsonString);
-
-    setState(() {
-      buttonLabels = List<String>.from(
-        jsonMap['buttons'].map((b) => b['label']),
-      );
-    });
+    try {
+      final jsonString = await rootBundle.loadString('lib/math/class_config.json');
+      final Map<String, dynamic> map = json.decode(jsonString);
+      setState(() {
+        buttonLabels = List<String>.from(map['buttons'].map((b) => b['label']));
+      });
+    } catch (e) {
+      debugPrint('Failed to load config: $e');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Med Exam Prep")),
       body: buttonLabels.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : Padding(
@@ -41,27 +42,18 @@ class _ClassHomeScreenState extends State<ClassHomeScreen> {
                 itemCount: buttonLabels.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
                   childAspectRatio: 1.3,
                 ),
-                itemBuilder: (context, index) {
+                itemBuilder: (context, i) {
                   return ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(16),
-                      backgroundColor: Colors.blueAccent,
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      textStyle: const TextStyle(fontSize: 16),
-                    ),
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text("${buttonLabels[index]} clicked")),
+                        SnackBar(content: Text("${buttonLabels[i]} clicked")),
                       );
                     },
-                    child: Text(buttonLabels[index]),
+                    child: Text(buttonLabels[i]),
                   );
                 },
               ),

@@ -1,0 +1,23 @@
+{
+    "biologie":[
+        {
+            "index": 1,
+            "question": "ce caut eu aici",
+            "answers": [
+                {
+                    "answer" : "da dc nu"
+                },
+                {
+                    "answer" : "da dc nu"
+                },
+                {
+                    "answer" : "da dc nu corect",
+                    "isCorect": true
+                },
+                {
+                    "answer" : "da dc nu"
+                }
+            ]
+        }
+    ]
+}

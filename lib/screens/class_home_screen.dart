@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class ClassHomeScreen extends StatefulWidget {
-  final int classNumber;
-
-  const ClassHomeScreen({super.key, required this.classNumber});
+  const ClassHomeScreen({super.key});
 
   @override
   State<ClassHomeScreen> createState() => _ClassHomeScreenState();
@@ -35,10 +33,6 @@ class _ClassHomeScreenState extends State<ClassHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Class ${widget.classNumber}"),
-        centerTitle: true,
-      ),
       body: buttonLabels.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : Padding(

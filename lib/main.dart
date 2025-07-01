@@ -32,7 +32,7 @@ class EntryPoint extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ClassHomeScreen(classNumber: selectedClass),
+            builder: (context) => ClassHomeScreen(),
           ),
         );
       },

@@ -1,0 +1,64 @@
+{
+  "buttons": [
+    { 
+      "index": 1,
+      "label": "Carol Davila",
+      "file": "carolDavilaGrile"
+    },
+    { 
+      "index": 2,
+      "label": "Iuliu Hatieganu",
+      "file": "iuliuHatieganuGrile"
+    },
+    { 
+      "index": 3,
+      "label": "Grigore T. Popa",
+      "file": "grigoreTPopaGrile"
+    },
+    { 
+      "index": 4,
+      "label": "Timisoara",
+      "file": "timisoaraGrile"
+    },
+    { 
+      "index": 5,
+      "label": "George Emil Palade",
+      "file": "georgeEmilPaladeGrile"
+    },
+    { 
+      "index": 6,
+      "label": "Craiova",
+      "file": "craiovaGrile"
+    },
+    { 
+      "index": 7,
+      "label": "Ovidius",
+      "file": "ovidiusGrile"
+    },
+    { 
+      "index": 8,
+      "label": "Lucian Blaga",
+      "file": "lucianBlagaGrile"
+    },
+    { 
+      "index": 9,
+      "label": "Oradea",
+      "file": "oradeaGrile"
+    },
+    { 
+      "index": 10,
+      "label": "Transilvania",
+      "file": "transilvaniaGrile"
+    },
+    { 
+      "index": 11,
+      "label": "Vasile Goldis",
+      "file": "vasileGoldisGrile"
+    },
+    { 
+      "index": 12,
+      "label": "Dunărea de Jos",
+      "file": "dunareaDeJosGrile"
+    }
+  ]
+}

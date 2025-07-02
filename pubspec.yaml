@@ -19,6 +19,18 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  
+
   assets:
     - lib/medicine/class_config.json
+    - lib/medicine/subjects/carolDavila.json
+    - lib/medicine/subjects/iuliuHatieganu.json
+    - lib/medicine/subjects/grigoreTPopa.json
+    - lib/medicine/subjects/timisoara.json
+    - lib/medicine/subjects/georgeEmilPalade.json
+    - lib/medicine/subjects/craiova.json
+    - lib/medicine/subjects/ovidius.json
+    - lib/medicine/subjects/lucianBlaga.json
+    - lib/medicine/subjects/oradea.json
+    - lib/medicine/subjects/transilvania.json
+    - lib/medicine/subjects/vasileGoldis.json
+    - lib/medicine/subjects/dunareaDeJos.json

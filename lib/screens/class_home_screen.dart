@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'subject_screen.dart'; // you'll make this next
 
 class ClassHomeScreen extends StatefulWidget {
   const ClassHomeScreen({super.key});
@@ -10,7 +11,7 @@ class ClassHomeScreen extends StatefulWidget {
 }
 
 class _ClassHomeScreenState extends State<ClassHomeScreen> {
-  List<String> buttonLabels = [];
+  List<Map<String, String>> universityButtons = [];
 
   @override
   void initState() {
@@ -22,8 +23,14 @@ class _ClassHomeScreenState extends State<ClassHomeScreen> {
     try {
       final jsonString = await rootBundle.loadString('lib/medicine/class_config.json');
       final Map<String, dynamic> map = json.decode(jsonString);
+
       setState(() {
-        buttonLabels = List<String>.from(map['buttons'].map((b) => b['label']));
+        universityButtons = List<Map<String, String>>.from(
+          map['universities'].map((e) => {
+                'label': e['label'],
+                'file': e['file'],
+              }),
+        );
       });
     } catch (e) {
       debugPrint('Failed to load config: $e');
@@ -33,27 +40,31 @@ class _ClassHomeScreenState extends State<ClassHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Med Exam Prep")),
-      body: buttonLabels.isEmpty
+      appBar: AppBar(title: const Text("Choose Your University")),
+      body: universityButtons.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : Padding(
               padding: const EdgeInsets.all(16),
               child: GridView.builder(
-                itemCount: buttonLabels.length,
+                itemCount: universityButtons.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 16,
                   crossAxisSpacing: 16,
-                  childAspectRatio: 1.3,
                 ),
-                itemBuilder: (context, i) {
+                itemBuilder: (context, index) {
+                  final label = universityButtons[index]['label']!;
+                  final file = universityButtons[index]['file']!;
                   return ElevatedButton(
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text("${buttonLabels[i]} clicked")),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => SubjectScreen(fileName: file),
+                        ),
                       );
                     },
-                    child: Text(buttonLabels[i]),
+                    child: Text(label),
                   );
                 },
               ),
